@@ -1,9 +1,9 @@
-﻿using Kentico.Forms.Web.Mvc;
+using Kentico.Forms.Web.Mvc;
 using Kentico.PageBuilder.Web.Mvc;
 
-namespace CompanyName.ShareableComponentBoilerplate.Kentico.MVC
+namespace NetC.FontAwesomeFormComponent.Kentico.MVC
 {
-    public class ShareableComponentBoilerplateWidgetModel : IWidgetProperties
+    public class FontAwesomeFormComponentWidgetModel : IWidgetProperties
     {
         // Defines a property and sets its default value
         [EditingComponent(TextInputComponent.IDENTIFIER, Order = 0, Label = "Text")]

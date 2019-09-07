@@ -1,11 +1,11 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareableComponentBoilerplate", "ShareableComponentBoilerplate\ShareableComponentBoilerplate.csproj", "{60D45549-BB62-4999-8F29-987B58B33127}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontAwesomeFormComponent", "FontAwesomeFormComponent\FontAwesomeFormComponent.csproj", "{60D45549-BB62-4999-8F29-987B58B33127}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareableComponentBoilerplate.Views", "ShareableComponentBoilerplate.Views\ShareableComponentBoilerplate.Views.csproj", "{3703E296-CD7C-47FF-9AB5-19B621C80B15}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontAwesomeFormComponent.Views", "FontAwesomeFormComponent.Views\FontAwesomeFormComponent.Views.csproj", "{3703E296-CD7C-47FF-9AB5-19B621C80B15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

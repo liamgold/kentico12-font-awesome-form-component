@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using CMS;
@@ -6,12 +6,12 @@ using CMS;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AssemblyTitleHere")]
-[assembly: AssemblyDescription("AssemblyDescriptionHere")]
+[assembly: AssemblyTitle("NetC.FontAwesomeFormComponent.Kentico.MVC")]
+[assembly: AssemblyDescription("Adds the ability for a content editor to select a Font Awesome 5.x icon from a modal popup.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("AssemblyCompanyHere")]
-[assembly: AssemblyProduct("AssemblyProductHere")]
-[assembly: AssemblyCopyright("AssemblyCopyrightHere")]
+[assembly: AssemblyCompany("NetConstruct")]
+[assembly: AssemblyProduct("NetC.FontAwesomeFormComponent.Kentico.MVC")]
+[assembly: AssemblyCopyright("MIT")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: AssemblyDiscoverable]
@@ -22,7 +22,7 @@ using CMS;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("60d45549-bb62-4999-8f29-987b58b33127")]
+[assembly: Guid("93134b79-4d52-4b49-8a18-cfba584bf2c2")]
 
 // Version information for an assembly consists of the following four values:
 //
