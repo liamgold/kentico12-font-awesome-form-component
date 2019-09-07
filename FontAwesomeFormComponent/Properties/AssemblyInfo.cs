@@ -6,11 +6,11 @@ using CMS;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("NetC.FontAwesomeFormComponent.Kentico.MVC")]
+[assembly: AssemblyTitle("Font Awesome Icon Form Component")]
 [assembly: AssemblyDescription("Adds the ability for a content editor to select a Font Awesome 5.x icon from a modal popup.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("NetConstruct")]
-[assembly: AssemblyProduct("NetC.FontAwesomeFormComponent.Kentico.MVC")]
+[assembly: AssemblyProduct("NetC.FontAwesomeFormComponent")]
 [assembly: AssemblyCopyright("MIT")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -33,5 +33,5 @@ using CMS;
 //
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyVersion("12.29.1.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]

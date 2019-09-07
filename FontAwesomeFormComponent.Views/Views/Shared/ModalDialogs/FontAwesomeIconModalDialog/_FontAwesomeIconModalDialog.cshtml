@@ -1,0 +1,75 @@
+﻿@{
+    Layout = null;
+}
+
+@using Kentico.Components.Web.Mvc.Dialogs
+
+@model NetC.FontAwesomeFormComponent.Kentico.MVC.FontAwesomeIconModalDialogViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    @Html.Kentico().ModalDialogScript()
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" integrity="sha256-zmfNZmXoNWBMemUOo1XUGFfc0ihGGLYdgtJS3KCr/l0=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/js/all.min.js" integrity="sha256-iZGp5HAiwRmkbOKVYv5FUER4iXp5QbiEudkZOdwLrjw=" crossorigin="anonymous"></script>
+    <style>
+        .icon-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .icon-list__icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            font-size: 14px;
+            font-family: sans-serif;
+            padding: 15px;
+            width: 100px;
+            height: 90px;
+            border-radius: 3px;
+        }
+
+        .icon-list__icon:hover {
+            background-color: #1175ae;
+            color: #fff;
+        }
+
+        .icon-list input[type="radio"]:checked + label {
+            background-color: #0f6194;
+            color: #fff;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div class="icon-list">
+            @foreach (var icon in Model.Icons)
+            {
+                <input type="radio" id="@icon.CssClasses" class="hidden" name="icon" value="@icon.CssClasses" />
+                <label class="icon-list__icon" for="@icon.CssClasses">
+                    <i class="@icon.CssClasses" style="font-size: 28px;"></i>
+                    @icon.DisplayName
+                </label>
+            }
+        </div>
+    </form>
+
+    @* Script that preselects the radio button of the current icon
+        Gets the value from the data passed when the 'kentico.modalDialog.open' function is called *@
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            var defaultValue = kentico.modalDialog.getData().value;
+            document.getElementById(defaultValue).checked = true;
+        });
+    </script>
+</body>
+</html>

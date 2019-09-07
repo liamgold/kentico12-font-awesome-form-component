@@ -1,0 +1,64 @@
+﻿@using System.Web.Mvc.Html
+@using Kentico.Forms.Web.Mvc
+
+@model NetC.FontAwesomeFormComponent.Kentico.MVC.FontAwesomeIconSelectorComponent
+
+@{
+    // Gets a collection of system HTML attributes necessary for the functionality of form component inputs
+    IDictionary<string, object> htmlAttributes = ViewData.GetEditorHtmlAttributes();
+
+    // Prepares data that will be passed to the function that opens the modal dialog
+    string dialogData = Newtonsoft.Json.JsonConvert.SerializeObject(new
+    {
+        modalDialogUrl = Url.Action("Index", "FontAwesomeIconModalDialog"),
+        iconInputId = Html.IdFor(m => m.Value).ToHtmlString()
+    });
+}
+
+@* Textbox input element that displays/edits the form component's icon value *@
+@Html.HiddenFor(m => m.Value, htmlAttributes)
+
+<i class="js-icon-preview @Model.Value fa-2x" style="font-style: normal;"></i>
+
+@* Button that opens the modal dialog when clicked *@
+<button type="button" class="ktc-btn ktc-btn-default" onclick="openIconModalDialog(@dialogData)">Open dialog</button>
+
+<script>
+    function removeClassByPrefix(node, prefix) {
+        var regx = new RegExp('\\b' + prefix + '[^ ]*[ ]?\\b', 'g');
+        node.className = node.className.replace(regx, '');
+        return node;
+    }
+
+    function addClass(node, selectedValue) {
+        var array = selectedValue.split(' ');
+        for (var i = 0, length = array.length; i < length; i++) {
+            node.classList.add(array[i]);
+        }
+        node.classList.add('fa-2x');
+    }
+
+    function openIconModalDialog(dialogData) {
+        // Gets the form component's input element
+        var inputElement = window.document.querySelector('#' + dialogData.iconInputId);
+        var previewElement = window.document.querySelector('.js-icon-preview');
+
+        // Opens the modal dialog
+        kentico.modalDialog.open({
+            url: dialogData.modalDialogUrl,
+            applyCallback: function (dialogWindow) {
+                // Retrieves the selected value from the modal dialog
+                var selectedValue = dialogWindow.document.querySelector('input[name="icon"]:checked').value;
+                // Updates the value of the input element in the property configuration dialog
+                inputElement.value = selectedValue;
+                // Update the value of the preview element in the property configuration dialog
+                removeClassByPrefix(previewElement, 'fa');
+                addClass(previewElement, selectedValue);
+            },
+            applyButtonText: 'Confirm icon selection',
+            title: 'Select an icon',
+            // Passes the current icon to the modal dialog data
+            data: { value: inputElement.value }
+        });
+    }
+</script>

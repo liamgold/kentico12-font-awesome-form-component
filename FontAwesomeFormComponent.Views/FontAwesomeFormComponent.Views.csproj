@@ -557,8 +557,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Views\Shared\Widgets\_FontAwesomeFormComponent.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\FormComponents\_FontAwesomeIconSelector.cshtml" />
+    <Content Include="Views\Shared\ModalDialogs\FontAwesomeIconModalDialog\_FontAwesomeIconModalDialog.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
