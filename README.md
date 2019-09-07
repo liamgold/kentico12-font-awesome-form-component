@@ -1,7 +1,7 @@
-# font-awesome-form-component
+# Kentico 12 MVC Font Awesome Form Component
 font-awesome-form-component for Kentico MVC, adds the ability for a content editor to select a Font Awesome 5.x icon from a modal popup.
 
-# Contributions, but fixes and License
+# ⌨️ Contributions, 🐛 bug fixes and 📜 license
 Feel free to Fork and submit pull requests to contribute.
 
 You can submit bugs through the issue list and i will get to them as soon as i can, unless you want to fix it yourself and submit a pull request!
