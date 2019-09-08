@@ -10,7 +10,13 @@ font-awesome-form-component for Kentico MVC, adds the ability for a content edit
 /// </summary>
 public string Icon { get; set; }
 ```
-2. Ensure your MVC site's layout contains Font Awesome CSS/JS, e.g.:
+
+2. Complete setting up the MVC widget itself, passing the Icon field through to the widget view, e.g.:
+```
+<i class="@Model.Icon"></i>
+```
+
+3. Ensure your MVC site's layout contains Font Awesome CSS/JS, e.g.:
 ```
 <!DOCTYPE html>
 
@@ -25,10 +31,11 @@ public string Icon { get; set; }
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/js/all.min.js" integrity="sha256-iZGp5HAiwRmkbOKVYv5FUER4iXp5QbiEudkZOdwLrjw=" crossorigin="anonymous"></script>
 </head>
 ```
-3. Add the widget to an MVC page, and open the config window to see the new property available:
+
+4. Add the widget to an MVC page, and open the config window to see the new property available:
 ![form component image](https://github.com/liamgold/font-awesome-form-component/blob/master/img/FormComponent.PNG?raw=true)
 
-4. 'Open dialog' opens the icon selection modal popup:
+5. Clicking the 'Open dialog' button opens the icon selection modal popup:
 ![form component modal image](https://github.com/liamgold/font-awesome-form-component/blob/master/img/FormComponentModal.PNG?raw=true)
 
 ## Nuget Package
