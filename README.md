@@ -1,6 +1,9 @@
 # Kentico 12 MVC Font Awesome Form Component
 font-awesome-form-component for Kentico MVC, adds the ability for a content editor to select a Font Awesome 5.x icon from a modal popup.
 
+## Nuget Package
+https://www.nuget.org/packages/NetC.FontAwesomeFormComponent.Kentico.MVC/
+
 ## Example use
 1. Include a property within an MVC widget property class:
 ```
@@ -37,9 +40,6 @@ public string Icon { get; set; }
 
 5. Clicking the 'Open dialog' button opens the icon selection modal popup:
 ![form component modal image](https://github.com/liamgold/font-awesome-form-component/blob/master/img/FormComponentModal.PNG?raw=true)
-
-## Nuget Package
-https://www.nuget.org/packages/NetC.FontAwesomeFormComponent.Kentico.MVC/
 
 ## ⌨️ Contributions, 🐛 bug fixes and 📜 license
 Feel free to Fork and submit pull requests to contribute.
