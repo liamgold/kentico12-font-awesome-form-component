@@ -1,25 +1,27 @@
 <?xml version="1.0"?>
 <package >
-	<metadata>
-		<id>$id$</id>
-		<version>$version$</version>
-		<title>$title$</title>
-		<authors>$author$</authors>
-		<owners>$author$</owners>
-		<projectUrl>https://github.com/liamgold/font-awesome-form-component</projectUrl>
-		<iconUrl>https://raw.githubusercontent.com/Kentico/devnet.kentico.com/master/marketplace/assets/generic-integration.png</iconUrl>
-		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>$description$</description>
-		<releaseNotes/>
-		<copyright>MIT</copyright>
-		<tags>FontAwesome IconSelector Kentico MVC NetConstruct</tags>
-		<dependencies>
-			<dependency id="Kentico.AspNet.Mvc" version="12.0.29" />
-		</dependencies>
-		<license type="expression">MIT</license>
-	</metadata>
-	<files>
-		<!-- Include the compiled views dll -->
-		<file src="bin\NetC.FontAwesomeFormComponent.Kentico.MVC.Views.dll" target = "lib\net461" />
-	</files>
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <projectUrl>https://github.com/liamgold/font-awesome-form-component</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/Kentico/devnet.kentico.com/master/marketplace/assets/generic-integration.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>
+      Added basic icon search functionality.
+    </releaseNotes>
+    <copyright>MIT</copyright>
+    <tags>FontAwesome IconSelector Kentico MVC NetConstruct</tags>
+    <dependencies>
+      <dependency id="Kentico.AspNet.Mvc" version="12.0.29" />
+    </dependencies>
+    <license type="expression">MIT</license>
+  </metadata>
+  <files>
+    <!-- Include the compiled views dll -->
+    <file src="bin\NetC.FontAwesomeFormComponent.Kentico.MVC.Views.dll" target = "lib\net472" />
+  </files>
 </package>

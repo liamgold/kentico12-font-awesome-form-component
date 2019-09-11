@@ -40,9 +40,6 @@ public string Icon { get; set; }
 
 ## Nuget Package
 https://www.nuget.org/packages/NetC.FontAwesomeFormComponent.Kentico.MVC/
-```
-Install-Package NetC.FontAwesomeFormComponent.Kentico.MVC -Version 12.29.1
-```
 
 ## ⌨️ Contributions, 🐛 bug fixes and 📜 license
 Feel free to Fork and submit pull requests to contribute.
