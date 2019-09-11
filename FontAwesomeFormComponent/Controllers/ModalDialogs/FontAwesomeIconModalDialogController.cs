@@ -49,7 +49,7 @@ namespace NetC.FontAwesomeFormComponent.Kentico.MVC
                     var iconModel = icon.Value.ToObject<FontAwesomeIcon>();
 
                     // Iterate over the free styles available for icon.
-                    foreach (var style in iconModel.Styles)
+                    foreach (var style in iconModel.Free)
                     {
                         var faIcon = new FontAwesomeIconSelectorListItem(iconModel.Label, icon.Name, style);
                         iconList.Add(faIcon);
