@@ -11,6 +11,7 @@
 <head>
     @Html.Kentico().ModalDialogScript()
     <meta name="viewport" content="width=device-width" />
+    <link href="@Url.Content("~/Kentico/Scripts/builders/page-builder.css")" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" integrity="sha256-zmfNZmXoNWBMemUOo1XUGFfc0ihGGLYdgtJS3KCr/l0=" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/js/all.min.js" integrity="sha256-iZGp5HAiwRmkbOKVYv5FUER4iXp5QbiEudkZOdwLrjw=" crossorigin="anonymous"></script>
     <style>
@@ -34,28 +35,45 @@
             border-radius: 3px;
         }
 
-        .icon-list__icon:hover {
-            background-color: #1175ae;
-            color: #fff;
-        }
+            .icon-list__icon:hover {
+                background-color: #1175ae;
+                color: #fff;
+            }
 
         .icon-list input[type="radio"]:checked + label {
             background-color: #0f6194;
             color: #fff;
         }
 
-        .hidden {
+        .hidden, .icon-hidden {
             display: none;
         }
     </style>
 </head>
 <body>
     <form action="">
-        <div class="icon-list">
+        <div class="ktc-form-wrapper">
+            <div class="ktc-form">
+                <div class="ktc-form-group">
+                    <div class="ktc-field-wrapper">
+                        <div class="ktc-editing-form-label-cell" style="text-align: right;margin-top: 6px;">
+                            <label class="ktc-control-label ktc-editing-form-label">Search for an icon:</label>
+                        </div>
+                        <div class="ktc-editing-form-value-cell">
+                            <div class="ktc-editing-form-control-nested-control">
+                                <input id="search" class="ktc-form-control" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="icon-list js-icon-list">
             @foreach (var icon in Model.Icons)
             {
                 <input type="radio" id="@icon.CssClasses" class="hidden" name="icon" value="@icon.CssClasses" />
-                <label class="icon-list__icon" for="@icon.CssClasses">
+                <label class="icon-list__icon js-icon-item" for="@icon.CssClasses">
                     <i class="@icon.CssClasses" style="font-size: 28px;"></i>
                     @icon.DisplayName
                 </label>
@@ -63,12 +81,38 @@
         </div>
     </form>
 
-    @* Script that preselects the radio button of the current icon
-        Gets the value from the data passed when the 'kentico.modalDialog.open' function is called *@
     <script type="text/javascript">
+        // Credit David Walsh (https://davidwalsh.name/javascript-debounce-function)
+        // Returns a function, that, as long as it continues to be invoked, will not
+        // be triggered. The function will be called after it stops being called for
+        // N milliseconds. If `immediate` is passed, trigger the function on the
+        // leading edge, instead of the trailing.
+        function debounce(n, t, u) { var e; return function () { var i = this, o = arguments, a = u && !e; clearTimeout(e), e = setTimeout(function () { e = null, u || n.apply(i, o) }, t), a && n.apply(i, o) } }
+
+        var handleSearch = debounce(function () {
+            var className = 'icon-hidden';
+            var text = document.querySelector('#search').value;
+            var icons = document.querySelector('.js-icon-list').querySelectorAll('.js-icon-item');
+
+            for (var i = 0; i < icons.length; i++) {
+                var icon = icons[i];
+                if (icon.innerText.toLowerCase().indexOf(text.toLowerCase()) > -1) {
+                    if (icon.classList.contains(className)) {
+                        icon.classList.remove(className);
+                    }
+                }
+                else {
+                    if (!icon.classList.contains(className)) {
+                        icon.classList.add(className);
+                    }
+                }
+            }
+        }, 250);
+
         document.addEventListener("DOMContentLoaded", function () {
             var defaultValue = kentico.modalDialog.getData().value;
             document.getElementById(defaultValue).checked = true;
+            document.querySelector('#search').addEventListener('keyup', handleSearch);
         });
     </script>
 </body>

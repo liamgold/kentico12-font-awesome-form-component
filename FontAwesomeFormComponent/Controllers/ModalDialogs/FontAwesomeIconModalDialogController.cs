@@ -45,16 +45,13 @@ namespace NetC.FontAwesomeFormComponent.Kentico.MVC
                         continue;
                     }
 
-                    var properties = icon.Children();
-
-                    // Retrieve icon label and available styles for the icon.
-                    var iconLabel = GetLabelName(properties.Values("label"));
-                    var iconStyles = GetIconStyles(properties.Values("free"));
+                    // Convert to a .NET model.
+                    var iconModel = icon.Value.ToObject<FontAwesomeIcon>();
 
                     // Iterate over the free styles available for icon.
-                    foreach (var style in iconStyles)
+                    foreach (var style in iconModel.Styles)
                     {
-                        var faIcon = new FontAwesomeIconSelectorListItem(iconLabel, icon.Name, style);
+                        var faIcon = new FontAwesomeIconSelectorListItem(iconModel.Label, icon.Name, style);
                         iconList.Add(faIcon);
                     }
                 }
@@ -76,26 +73,6 @@ namespace NetC.FontAwesomeFormComponent.Kentico.MVC
                 {
                     EventLogProvider.LogException("FontAwesomeIconSelectorComponent", "Icons", ex);
                 }
-            }
-
-            return string.Empty;
-        }
-
-        private string[] GetIconStyles(IJEnumerable<JToken> styleList)
-        {
-            foreach (JArray jArray in styleList)
-            {
-                return jArray.ToObject<string[]>();
-            }
-
-            return new string[0];
-        }
-
-        private string GetLabelName(IJEnumerable<JToken> tokenList)
-        {
-            foreach (JValue jValue in tokenList)
-            {
-                return jValue.ToString();
             }
 
             return string.Empty;

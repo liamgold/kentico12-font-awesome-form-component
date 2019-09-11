@@ -535,6 +535,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ModalDialogs\FontAwesomeIconModalDialogController.cs" />
+    <Compile Include="Models\FormComponents\FontAwesomeIconSelector\FontAwesomeIcon.cs" />
     <Compile Include="Models\FormComponents\FontAwesomeIconSelector\FontAwesomeIconSelectorComponent.cs" />
     <Compile Include="Models\FormComponents\FontAwesomeIconSelector\FontAwesomeIconSelectorListItem.cs" />
     <Compile Include="Models\FormComponents\FontAwesomeIconSelector\FontAwesomeIconSelectorProperties.cs" />
