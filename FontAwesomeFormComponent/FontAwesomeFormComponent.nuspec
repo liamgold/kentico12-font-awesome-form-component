@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>
-      Added basic icon search functionality.
+      Changed back to only include free icons rather than including pro.
     </releaseNotes>
     <copyright>MIT</copyright>
     <tags>FontAwesome IconSelector Kentico MVC NetConstruct</tags>
